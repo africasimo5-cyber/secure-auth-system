@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+
+  .animate-gradient {
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Entrance Animations */
+  .animate-in {
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: forwards;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation-name: fade-in-kf;
+  }
+
+  @keyframes fade-in-kf {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .slide-in-from-bottom-8 {
+    transform: translateY(2rem);
+    animation-name: slide-in-from-bottom-kf, fade-in-kf;
+  }
+
+  .slide-in-from-bottom-4 {
+    transform: translateY(1rem);
+    animation-name: slide-in-from-bottom-kf-short, fade-in-kf;
+  }
+
+  @keyframes slide-in-from-bottom-kf {
+    from { transform: translateY(2rem); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slide-in-from-bottom-kf-short {
+    from { transform: translateY(1rem); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+:root {
+  --background: #020617;
+  --foreground: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
