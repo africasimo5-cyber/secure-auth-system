@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       success: true 
     }, { status: 201 });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Signup error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }

@@ -59,7 +59,7 @@ export async function POST(req: Request) {
 
     return response;
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Verify OTP error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }

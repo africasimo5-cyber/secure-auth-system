@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
 function VerifyOtpContent() {
   const [otp, setOtp] = useState('');
@@ -10,7 +10,6 @@ function VerifyOtpContent() {
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [cooldown, setCooldown] = useState(0);
-  const router = useRouter();
   const searchParams = useSearchParams();
   const email = searchParams.get('email') || '';
 
@@ -48,7 +47,7 @@ function VerifyOtpContent() {
       } else {
         setError(data.error || 'Invalid or expired code');
       }
-    } catch (err) {
+    } catch {
       setError('Connection failed. Please try again.');
     } finally {
       setIsLoading(false);
@@ -77,7 +76,7 @@ function VerifyOtpContent() {
       } else {
         setError(data.error || 'Failed to resend code');
       }
-    } catch (err) {
+    } catch {
       setError('Connection failed. Please try again.');
     } finally {
       setResendLoading(false);
@@ -141,7 +140,7 @@ function VerifyOtpContent() {
               ) : cooldown > 0 ? (
                 <span>Resend available in {cooldown}s</span>
               ) : (
-                <span>Didn't receive code? <span className="text-blue-400 hover:underline">Resend</span></span>
+                <span>Didn&apos;t receive code? <span className="text-blue-400 hover:underline">Resend</span></span>
               )}
             </button>
           </div>

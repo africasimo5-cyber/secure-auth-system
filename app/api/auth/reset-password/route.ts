@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     }
 
     // Verify the token
-    const decoded: any = await verifyToken(token);
+    const decoded = await verifyToken(token) as { email?: string } | null;
 
     if (!decoded || !decoded.email) {
       return NextResponse.json({ error: 'Invalid or expired token' }, { status: 400 });
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
       message: 'Password has been reset successfully' 
     }, { status: 200 });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Reset password error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }

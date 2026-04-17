@@ -46,7 +46,7 @@ function ResetPasswordContent() {
       } else {
         setError(data.error || 'Invalid or expired token');
       }
-    } catch (err) {
+    } catch {
       setError('Connection failed. Please try again.');
     } finally {
       setIsLoading(false);

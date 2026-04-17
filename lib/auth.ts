@@ -1,4 +1,5 @@
 import * as jose from 'jose';
+import { JWTPayload } from 'jose';
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -12,7 +13,7 @@ const secret = new TextEncoder().encode(JWT_SECRET);
  * Sign a JWT token for a user.
  * Default expiry: 7 days.
  */
-export const signToken = async (payload: any, expiresIn: string | number = '7d') => {
+export const signToken = async (payload: JWTPayload, expiresIn: string | number = '7d') => {
   return await new jose.SignJWT(payload)
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
@@ -28,7 +29,7 @@ export const verifyToken = async (token: string) => {
   try {
     const { payload } = await jose.jwtVerify(token, secret);
     return payload;
-  } catch (error) {
+  } catch {
     return null;
   }
 };

@@ -39,7 +39,7 @@ export default function LoginPage() {
           setError(data.error || 'Invalid email or password');
         }
       }
-    } catch (err) {
+    } catch {
       setError('Connection refused. Please try again.');
     } finally {
       setIsLoading(false);
@@ -85,7 +85,7 @@ export default function LoginPage() {
             <div className="space-y-2">
               <div className="flex justify-between items-center px-1">
                 <label className="text-sm font-semibold text-slate-300">Password</label>
-                <Link href="/forgot-password" virtual="true" className="text-xs text-blue-400 hover:underline">
+                <Link href="/forgot-password" className="text-xs text-blue-400 hover:underline">
                   Forgot?
                 </Link>
               </div>
@@ -111,7 +111,7 @@ export default function LoginPage() {
 
           <div className="mt-10 text-center border-t border-white/5 pt-8">
             <p className="text-slate-400 font-medium">
-              Don't have an account?{' '}
+              Don&apos;t have an account?{' '}
               <Link href="/signup" className="text-white hover:underline underline-offset-4 decoration-blue-500 transition-all font-extrabold">
                 Sign Up
               </Link>

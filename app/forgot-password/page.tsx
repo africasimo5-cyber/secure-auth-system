@@ -29,7 +29,7 @@ export default function ForgotPasswordPage() {
       } else {
         setError(data.error || 'Failed to request reset');
       }
-    } catch (err) {
+    } catch {
       setError('Connection failed. Please try again.');
     } finally {
       setIsLoading(false);

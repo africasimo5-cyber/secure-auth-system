@@ -45,7 +45,7 @@ export default function SignupPage() {
       } else {
         setError(data.error || 'Signup failed. Please try again.');
       }
-    } catch (err) {
+    } catch {
       setError('Connection refused. Please check your internet.');
     } finally {
       setIsLoading(false);

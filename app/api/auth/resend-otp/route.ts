@@ -44,7 +44,7 @@ export async function POST(req: Request) {
       message: 'A new verification code has been sent to your email.' 
     }, { status: 200 });
 
-  } catch (error: any) {
+  } catch (error) {
     console.error('Resend OTP error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
