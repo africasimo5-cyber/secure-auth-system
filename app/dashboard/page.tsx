@@ -81,17 +81,4 @@ export default function DashboardPage() {
   );
 }
 
-function StatCard({ title, value, color }: { title: string, value: string, color: 'emerald' | 'blue' | 'slate' }) {
-  const colors = {
-    emerald: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-    blue: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-    slate: 'text-slate-400 bg-slate-500/10 border-slate-500/20',
-  };
 
-  return (
-    <div className={`p-6 rounded-2xl border ${colors[color]} backdrop-blur-sm shadow-xl`}>
-      <h4 className="text-xs font-bold uppercase tracking-widest opacity-60 mb-1">{title}</h4>
-      <div className="text-xl font-extrabold">{value}</div>
-    </div>
-  );
-}

@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const router = useRouter();
+
   const pathname = usePathname();
 
   useEffect(() => {
@@ -16,24 +16,7 @@ export default function Navbar() {
     setIsLoggedIn(!!token);
   }, [pathname]);
 
-  const handleLogout = async () => {
-    try {
-      // 1. Clear cookie via API
-      await fetch('/api/auth/logout', { method: 'POST' });
 
-      // 2. Clear localStorage
-      localStorage.removeItem('token');
-      
-      setIsLoggedIn(false);
-      router.push('/login');
-      router.refresh();
-    } catch (error) {
-      console.error('Logout failed:', error);
-      // Still clear local state as a fallback
-      localStorage.removeItem('token');
-      router.push('/login');
-    }
-  };
 
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#020617]/80 backdrop-blur-xl">
