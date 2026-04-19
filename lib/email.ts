@@ -15,7 +15,7 @@ const transporter = nodemailer.createTransport({
  */
 export const sendOTPEmail = async (to: string, otp: string) => {
   const mailOptions = {
-    from: `"Secure Auth" <${process.env.EMAIL_USER}>`,
+    from: `"Emma Auth" <${process.env.EMAIL_USER}>`,
     to,
     subject: 'Your Verification Code',
     html: `
@@ -28,7 +28,7 @@ export const sendOTPEmail = async (to: string, otp: string) => {
         </div>
         <p style="color: #718096; font-size: 14px; text-align: center; margin-top: 32px;">This code is valid for 10 minutes. If you didn't request this, you can safely ignore this email.</p>
         <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 32px 0;">
-        <p style="color: #a0aec0; font-size: 12px; text-align: center;">&copy; ${new Date().getFullYear()} Secure Auth System. All rights reserved.</p>
+        <p style="color: #a0aec0; font-size: 12px; text-align: center;">&copy; ${new Date().getFullYear()} Emma Auth System. All rights reserved.</p>
       </div>
     `,
   };
@@ -41,7 +41,7 @@ export const sendOTPEmail = async (to: string, otp: string) => {
  */
 export const sendResetEmail = async (to: string, resetLink: string) => {
   const mailOptions = {
-    from: `"Secure Auth" <${process.env.EMAIL_USER}>`,
+    from: `"Emma Auth" <${process.env.EMAIL_USER}>`,
     to,
     subject: 'Reset Your Password',
     html: `
@@ -56,7 +56,7 @@ export const sendResetEmail = async (to: string, resetLink: string) => {
         <p style="color: #3182ce; font-size: 14px; word-break: break-all;">${resetLink}</p>
         <p style="color: #718096; font-size: 14px; text-align: center; margin-top: 32px;">This link is valid for 1 hour. If you didn't request this, your password will remain unchanged.</p>
         <hr style="border: 0; border-top: 1px solid #edf2f7; margin: 32px 0;">
-        <p style="color: #a0aec0; font-size: 12px; text-align: center;">&copy; ${new Date().getFullYear()} Secure Auth System. All rights reserved.</p>
+        <p style="color: #a0aec0; font-size: 12px; text-align: center;">&copy; ${new Date().getFullYear()} Emma Auth System. All rights reserved.</p>
       </div>
     `,
   };

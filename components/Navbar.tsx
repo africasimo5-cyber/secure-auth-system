@@ -41,7 +41,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href={isLoggedIn ? "/dashboard" : "/login"} className="text-xl font-black tracking-tighter text-white hover:opacity-80 transition-opacity">
-              SECURE<span className="text-blue-500">AUTH</span>
+              EMMA<span className="text-blue-500">AUTH</span>
             </Link>
           </div>
           <div className="flex items-center gap-6">
@@ -50,12 +50,7 @@ export default function Navbar() {
                 <Link href="/dashboard" className={`text-sm font-bold transition-colors ${pathname === '/dashboard' ? 'text-white' : 'text-slate-400 hover:text-white'}`}>
                   CONSOLE
                 </Link>
-                <button
-                  onClick={handleLogout}
-                  className="px-5 py-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-red-500/20 hover:border-red-500/40 hover:text-red-400 text-xs font-black tracking-widest transition-all"
-                >
-                  TERMINATE
-                </button>
+
               </>
             ) : (
               <>

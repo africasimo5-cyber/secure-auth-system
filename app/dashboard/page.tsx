@@ -73,26 +73,9 @@ export default function DashboardPage() {
           </button>
         </div>
 
-        {/* Info Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <StatCard title="Identity" value="Authenticated" color="emerald" />
-          <StatCard title="Protection" value="Middleware Active" color="blue" />
-          <StatCard title="Storage" value="HTTP-Only Cookies" color="slate" />
-          <StatCard title="System" value="V3.1.0" color="slate" />
-        </div>
 
-        {/* placeholder for main dashboard content */}
-        <div className="p-12 rounded-3xl bg-[#0f172a] border border-white/5 border-dashed flex flex-col items-center justify-center text-center">
-          <div className="w-16 h-16 rounded-full bg-slate-800 flex items-center justify-center mb-6">
-            <svg className="w-8 h-8 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </div>
-          <h2 className="text-2xl font-bold mb-2 text-slate-300">No recent activity</h2>
-          <p className="text-slate-500 max-w-sm">
-            Server-side route protection is now active. Your session is managed via secure, HTTP-only cookies.
-          </p>
-        </div>
+
+
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ Your `.env.local` file must contain the following keys:
 
 ```env
 # MongoDB Connection String (e.g., from MongoDB Atlas)
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/secure-auth?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/emma-auth?retryWrites=true&w=majority
 
 # JWT Secret Key (Generate a strong, random 64-character string)
 JWT_SECRET=your_super_secure_random_string_here
@@ -66,7 +66,7 @@ If you'd like to deploy this application to the Vercel free tier, follow these m
    ```bash
    git init
    git add .
-   git commit -m "Initial commit: Secure Auth System"
+   git commit -m "Initial commit: Emma Auth System"
    git branch -M main
    git remote add origin https://github.com/africasimo5-cyber/secure-login-system.git
    git push -u origin main

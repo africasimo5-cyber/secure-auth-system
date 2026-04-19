@@ -54,7 +54,6 @@ export default function LoginPage() {
           
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-extrabold mb-3 tracking-tight">Sign In</h1>
-            <p className="text-slate-400 font-medium font-mono text-sm">SECURE_AUTH_V3.0_ONLINE</p>
           </div>
 
           {error && (

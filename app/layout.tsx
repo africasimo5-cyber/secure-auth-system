@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SecureAuth | Enterprise Access Control",
+  title: "EmmaAuth | Enterprise Access Control",
   description: "Advanced secure authentication platform.",
 };
 
